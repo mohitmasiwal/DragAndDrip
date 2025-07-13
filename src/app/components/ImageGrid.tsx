@@ -1,17 +1,9 @@
-type Props = {
-  images: { image: { url: string } }[];
-};
-
-export default function ImageGrid({ images }: Props) {
+ export default function ImageGrid({ images }: { images: string[] }) {
   return (
-    <div style={{
-      display: 'grid',
-      gridTemplateColumns: 'repeat(2, 1fr)',
-      gap: '1rem'
-    }}>
-      {images.map((item, index) => (
-        <img key={index} src={item.image.url} alt={`Grid ${index}`} />
+    <section className="image-grid">
+      {images.map((src, idx) => (
+        <img key={idx} src={src} alt={`Image ${idx + 1}`} />
       ))}
-    </div>
+    </section>
   );
 }
