@@ -4,17 +4,16 @@ import ImageGrid from '../components/ImageGrid';
 
 interface Props {
   type: 'HeroBlock' | 'TwoColumnRow' | 'ImageGrid';
-  data: any;
 }
 
-export default function BlockRenderer({ type, data }: Props) {
+export default function BlockRenderer({ type }: Props) {
   switch (type) {
     case 'HeroBlock':
-      return <HeroBlock {...data} />;
+      return <HeroBlock />;
     case 'TwoColumnRow':
-      return <TwoColumnRow {...data} />;
+      return <TwoColumnRow />;
     case 'ImageGrid':
-      return <ImageGrid images={data} />;
+      return <ImageGrid />;
     default:
       return null;
   }
